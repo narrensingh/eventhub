@@ -24,7 +24,7 @@ body {
 }
 
 .container__left {
-  width: 60%;
+  min-width: 65%;
 }
 
 .calender {
@@ -88,6 +88,8 @@ body {
   margin-bottom: 5px;
   border-radius: 20px;
   transition: background-color 0.4s ease;
+  position: relative;
+  font-size: 25px;
 }
 
 .days .day:not(.prev-month, .next-month):hover {
@@ -105,8 +107,8 @@ body {
   position: relative;
   overflow: hidden;
   border: none;
-  background-color: #3498db;
-  color: white;
+  background-color: white;
+  color: #a752fd;
   padding: 10px 20px;
   font-size: 20px;
   border-radius: 50px;
@@ -127,4 +129,83 @@ body {
     transform: scale(4);
     opacity: 0;
   }
+}
+
+.days .active {
+  background-color: #8000ff;
+  position: relative;
+  font-size: 60px;
+  font-weight: 500;
+  -webkit-box-shadow: 1px 1px 9px 2px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 1px 1px 9px 2px rgba(0, 0, 0, 1);
+  box-shadow: 1px 1px 9px 2px rgba(0, 0, 0, 1);
+  border: 1px solid black;
+}
+
+.days .today {
+  font-size: 60px;
+  background-color: #8000ff;
+}
+
+.days .event {
+  position: relative;
+}
+
+.days .event::after {
+  content: '';
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  width: 20px;
+  height: 6px;
+  border-radius: 30px;
+  transform: translateX(-50%);
+  background-color: white;
+}
+
+.days .event:hover::after {
+  background-color: #a752fd;
+}
+
+.goto-today {
+  display: flex;
+  height: 35px;
+  justify-content: space-between;
+  width: 30%;
+  align-items: center;
+  margin: 0px auto;
+  padding: 5px;
+  border: 1px solid grey;
+  border-radius: 10px;
+}
+
+.goto {
+  background-color: white;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.date__input {
+  outline: none;
+  border: none;
+  padding: 5px;
+}
+
+.go__btn {
+  outline: none;
+  border: none;
+  padding: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+  border-radius: 10px;
+  color: #8000ff;
+}
+
+.today__btn {
+  border: none;
+  outline: none;
+  padding: 6px;
+  background-color: #8000ff;
+  color: white;
+  border-radius: 10px;
 }

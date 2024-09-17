@@ -18,12 +18,12 @@
       <div class="container__left">
         <div class="calender">
           <div class="calender__top">
-            <button class="ripple-btn" id="left-btn">
-              <i class="fa fa-angle-left prev"></i>
+            <button class="ripple-btn prev" id="left-btn">
+              <i class="fa fa-angle-left"></i>
             </button>
-            <div class="month__name">November 2024</div>
-            <button class="ripple-btn" id="right-btn">
-              <i class="fa fa-angle-right next"></i>
+            <div class="month__name"></div>
+            <button class="ripple-btn next" id="right-btn">
+              <i class="fa fa-angle-right"></i>
             </button>
           </div>
           <div class="weekdays">
@@ -36,43 +36,16 @@
             <div>Sat</div>
           </div>
           <div class="days">
-            <div class="day prev-month">30</div>
-            <div class="day prev-month">31</div>
-            <div class="day">3</div>
-            <div class="day">4</div>
-            <div class="day">5</div>
-            <div class="day">6</div>
-            <div class="day">7</div>
-            <div class="day">1</div>
-            <div class="day">2</div>
-            <div class="day">3</div>
-            <div class="day">4</div>
-            <div class="day">5</div>
-            <div class="day">6</div>
-            <div class="day">7</div>
-            <div class="day">1</div>
-            <div class="day">2</div>
-            <div class="day today active">3</div>
-            <div class="day">4</div>
-            <div class="day">5</div>
-            <div class="day">6</div>
-            <div class="day">7</div>
-            <div class="day">1</div>
-            <div class="day">2</div>
-            <div class="day">3</div>
-            <div class="day">4</div>
-            <div class="day">5</div>
-            <div class="day">6</div>
-            <div class="day">7</div>
-            <div class="day">1</div>
-            <div class="day">2</div>
-            <div class="day">3</div>
-            <div class="day">4</div>
-            <div class="day next-month">1</div>
-            <div class="day next-month">2</div>
-            <div class="day next-month">3</div>
+            <!--We will add days with js-->
           </div>
         </div>
+      </div>
+      <div class="goto-today">
+        <div class="goto">
+          <input type="text" placeholder="mm/yyyy" class="date__input" />
+          <button class="go__btn">Go</button>
+        </div>
+        <button class="today__btn">Today</button>
       </div>
     </div>
     <script src="main.js"></script>

@@ -13,18 +13,16 @@ body {
 
 .container {
   position: relative;
-  width: 90%;
-  height: 90%;
+  width: 100%;
+  height: 100%;
   margin: 0 auto;
-  padding: 5px;
   display: flex;
-  border-radius: 10px;
   color: white;
   background-color: whitesmoke;
 }
 
 .container__left {
-  min-width: 65%;
+  width: 73%;
 }
 
 .calender {
@@ -34,7 +32,6 @@ body {
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
-  border-radius: 10px;
   background-color: #a752fd;
 }
 
@@ -175,7 +172,6 @@ body {
   align-items: center;
   margin: 0px auto;
   padding: 5px;
-  border: 1px solid grey;
   border-radius: 10px;
 }
 
@@ -199,6 +195,7 @@ body {
   padding-left: 10px;
   border-radius: 10px;
   color: #8000ff;
+  cursor: pointer;
 }
 
 .today__btn {
@@ -208,4 +205,5 @@ body {
   background-color: #8000ff;
   color: white;
   border-radius: 10px;
+  cursor: pointer;
 }

@@ -30,6 +30,9 @@ let date = document.querySelector('.month__name');
 let days_container = document.querySelector('.days');
 let prev = document.querySelector('.prev');
 let next = document.querySelector('.next');
+let todaybtn = document.querySelector('.today__btn');
+let gobtn = document.querySelector('.go__btn');
+let input = document.querySelector('.date__input');
 
 let today = new Date();
 let month = today.getMonth(); // Changed from const to let
@@ -114,4 +117,29 @@ prev.addEventListener('click', () => {
 
 next.addEventListener('click', () => {
   nextMonth();
+});
+
+todaybtn.addEventListener('click', () => {
+  today = new Date();
+  month = today.getMonth();
+  year = today.getFullYear();
+  initCal();
+});
+
+input.addEventListener('keyup', () => {
+  if (input.value.length === 2) {
+    input.value += '/';
+  }
+});
+
+const goBtn = () => {
+  const dateArray = input.value.split('/');
+  month = Number(dateArray[0]) - 1;
+  year = dateArray[1];
+  console.log(month);
+  initCal();
+};
+
+gobtn.addEventListener('click', () => {
+  goBtn();
 });

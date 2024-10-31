@@ -143,3 +143,63 @@ const goBtn = () => {
 gobtn.addEventListener('click', () => {
   goBtn();
 });
+
+const nameInput = document.querySelector('.name_of_event');
+const startTimeInput = document.querySelector('.start_time');
+const endTimeInput = document.querySelector('.end_time');
+const submitBtn = document.querySelector('.submit__event');
+const eventsContainer = document.querySelector('.events');
+
+submitBtn.addEventListener('click', (e) => {
+  e.preventDefault(); // Prevent default behavior if it's a form
+
+  const eventName = nameInput.value.trim();
+  const startTime = startTimeInput.value.trim();
+  const endTime = endTimeInput.value.trim();
+
+  // Check if inputs are valid
+  if (eventName === '' || startTime === '' || endTime === '') {
+    alert('Please fill in all the fields.');
+    return;
+  }
+
+  // Create the event element structure
+  const eventDiv = document.createElement('div');
+  eventDiv.classList.add('event');
+
+  const eventTitleDiv = document.createElement('div');
+  eventTitleDiv.classList.add('event__title');
+
+  const checkbox = document.createElement('input');
+  checkbox.type = 'checkbox';
+  checkbox.classList.add('check');
+
+  const eventNameHeading = document.createElement('h3');
+  eventNameHeading.classList.add('event__name');
+  eventNameHeading.textContent = eventName;
+
+  const eventTimeDiv = document.createElement('div');
+  eventTimeDiv.classList.add('event__time');
+  eventTimeDiv.textContent = `${startTime} - ${endTime}`;
+
+  // Append the checkbox and name to event__title div
+  eventTitleDiv.appendChild(checkbox);
+  eventTitleDiv.appendChild(eventNameHeading);
+
+  // Append the title and time to the event div
+  eventDiv.appendChild(eventTitleDiv);
+  eventDiv.appendChild(eventTimeDiv);
+
+  // Append the new event to the events container
+  eventsContainer.appendChild(eventDiv);
+
+  // Clear the input fields after adding the event
+  nameInput.value = '';
+  startTimeInput.value = '';
+  endTimeInput.value = '';
+  checkbox.addEventListener('change', function () {
+    if (this.checked) {
+      eventsContainer.removeChild(eventDiv); // Remove the event from the parent container
+    }
+  });
+});
